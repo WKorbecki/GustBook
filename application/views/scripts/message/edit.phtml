@@ -1,0 +1,28 @@
+<form method="post">
+    <table>
+        <tr>
+            <th style="float: right">
+                Wiadomość:
+            </th>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <th>
+
+            </th>
+            <td>
+                <textarea id="message" name="message" style="resize: none"  rows="24" cols="80"><?= $this->edit_message; ?></textarea>
+            </td>
+        </tr>
+        <tr>
+            <th>
+                <?= $this->message; ?>
+            </th>
+            <td>
+                <input type="submit" id="send" name="send" value="Wyślij">
+            </td>
+        </tr>
+    </table>
+</form>

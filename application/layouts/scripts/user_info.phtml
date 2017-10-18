@@ -1,0 +1,31 @@
+<table style="margin-left: auto; margin-right: auto">
+<tr>
+    <th style="text-align: center;" colspan="2">
+        Użytkownik
+    </th>
+</tr>
+<tr>
+    <th style="float: right">
+        Nazwa:
+    </th>
+    <td>
+        <?php if($this->user_id==0){echo 'Gość';}else{echo $this->user['name'];}?>
+    </td>
+</tr>
+<tr>
+    <th style="float: right">
+        Poziom:
+    </th>
+    <td>
+        <?php if($this->user['access']==0){echo 'Użytkownik';}else{echo 'Administrator';}?>
+    </td>
+</tr>
+<tr>
+    <th style="float: right">
+        Wiadomości:
+    </th>
+    <td>
+        <?= $this->user['messages']; ?>
+    </td>
+</tr>
+</table>

@@ -1,0 +1,23 @@
+<!-- application/layouts/scripts/layout.phtml -->
+<?php echo $this->doctype() ?>
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>Zend Framework Quickstart Application</title>
+    </head>
+    <body>
+        <div id="header" style="background-color: #EEEEEE; height: 45px;">
+            <div id="header-log" style="float: left">
+                <a href="<?php echo $this->url(array('controller'=>'item'),'default',true) ?>">Guestbook</a>
+            </div>
+            <div id="header-navigation" style="float: right">
+                <a href="<?php echo $this->url(array('controller'=>'user', 'action'=>'signin'),'default',true) ?>">Sign In</a>
+                /
+                <a href="<?php echo $this->url(array('controller'=>'user', 'action'=>'signup'),'default',true) ?>">Sign Up</a>
+            </div>
+        </div>
+        
+        <?php echo $this->layout()->content; ?>        
+        
+    </body>
+</html>

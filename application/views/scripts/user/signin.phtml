@@ -1,0 +1,12 @@
+<?= $this->eMSG; ?>
+
+<div id="page-signin">
+    <?= $this->eMsg; ?>
+    <form method="post">
+        <table style="margin-left: auto; margin-right: auto">
+            <tr> <th style="float: right">Login:</th> <td><input type="text" id="login" name="login" value="<?= $_POST['login']; ?>" /></td> </tr>
+            <tr> <th style="float: right">Password:</th> <td><input type="password" id="pwd" name="pwd" /></td> </tr>
+            <tr> <th><?= $this->msg; ?></th> <td><input type="submit" value="Sign In" name="signin" id="signin" /></td> </tr>
+        </table>
+    </form>
+</div>

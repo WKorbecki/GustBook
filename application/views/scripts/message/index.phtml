@@ -1,0 +1,47 @@
+<?php
+    if (count($this->messages)>0)
+    {
+        $users = new Application_Model_DbTable_Users();
+        foreach ($this->messages as $message)
+        {
+            $user = $users->getUser($message['user_id']);
+    ?>
+    <table style="margin-left: auto; margin-right: auto; width: 660px">
+        <tr>
+            <th style="width: 100px"> <?= $message['date_mod'];?> </th>
+            <td>
+                <?php
+                if ($this->user_id==$user['user_id'] || $this->user['access']==1)
+                { ?>
+                    [ <a href="<?= $this->url(array('controller'=>'message','action'=>'edit','id'=>$message['msg_id']),'default',true); ?>">Edytuj</a> ]
+                <?php }
+                if ($this->user['access']==1)
+                {?>
+                    [ <a href="<?php echo $this->url(array('controller'=>'message','action'=>'delete','id'=>$message['msg_id']),'default',true) ?>">Usuń</a> ]
+                <?php } ?>
+            </td>
+        </tr>
+        <tr>
+            <th>  </th>
+            <td> <?= nl2br($message['msg']); ?> </td>
+        </tr>
+        <tr>
+            <th>  </th>
+            <td style="float: right">
+                <a href="mailto:<?= $user['email']; ?>"> <?= $user['name']; ?> </a>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <hr />
+            </td>
+        </tr>
+    </table>
+    <?php 
+        }
+    }
+    else
+    {
+        echo "Brak wiadomości.<br/>";
+    }
+    ?>

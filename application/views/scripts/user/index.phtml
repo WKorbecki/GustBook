@@ -1,0 +1,20 @@
+<table style="margin-left: auto;margin-right: auto">
+    
+    <?php
+    try
+        {
+            $user_info = new App_User();
+            echo "<tr> <th>Id</th> <th>Name</th> <th>Email</th> <th>Access</th> <th>Messages</th> </tr>";
+            foreach($this->users as $user)
+            {
+                $count_msg = $user_info->info($user->user_id);
+                echo "<tr> <td>$user->user_id</td> <td>$user->name</td> <td>$user->email</td> <td>$user->access</td> <td>".$count_msg['count']."</td> </tr>";
+            }
+        }
+        catch (Exception $ex)
+        {
+            echo $ex->getMessage();
+        }
+    
+    ?>
+</table>

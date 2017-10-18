@@ -1,0 +1,17 @@
+<?php include_once 'layout.phtml'; ?>
+        <div id="header2" style="background-color: #EEEEEE; height: 45px;">
+            <div id="header2-logo" style="float: left">
+                <a href="<?php echo $this->url(array('controller'=>'item'),'default',true) ?>">Guestbook</a>
+            </div>
+            <div id="header2-navigation2" style="float: right">
+                Hello <?= $this->user_name; ?> <br/>You can
+                <a href="<?php echo $this->url(array('controller'=>'user','action'=>'logout'),'default',true) ?>" onmouseover="style.color = '#ff0000'" onmouseout="style.color = '#0000ff'">logout</a>
+                <a href="<?php echo $this->url(array('controller'=>'item','action'=>'create'),'default',true) ?>" onmouseover="style.color = '#ff0000'" onmouseout="style.color = '#0000ff'">add new message</a>
+            </div>
+        </div>
+        
+        <?php if ($this->user['access']==1) {echo "Admin panel<br/>";} ?>
+        <?php echo $this->layout()->content; ?>        
+        
+    </body>
+</html>

@@ -1,0 +1,14 @@
+<div id="page-signup">
+    <?= $this->eMsg; ?>
+    <form method="post">
+        <table style="margin-left: auto; margin-right: auto">
+            <tr> <th style="float: right">Login:</th> <td><input type="text" id="login" name="login" value="<?= $_POST['login']; ?>" /></td> <td><?= $this->errors['login']; ?></td> </tr>
+            <tr> <th style="float: right">Password:</th> <td><input type="password" id="pwd" name="pwd" /></td> <td><?= $this->errors['pwd']; ?></td> </tr>
+            <tr> <th style="float: right">Re. Password:</th> <td><input type="password" id="re_pwd" name="re_pwd" /></td> <td><?= $this->errors['re_pwd']; ?></td> </tr>
+            <tr> <th style="float: right">Name:</th> <td><input type="text" id="name" name="name" value="<?= $_POST['name']; ?>" /></td> <td><?= $this->errors['name']; ?></td> </tr>
+            <tr> <th style="float: right">E-mail:</th> <td><input type="email" id="email" name="email" value="<?= $_POST['email']; ?>" /></td> <td><?= $this->errors['email']; ?></td> </tr>
+            <tr> <th><?= $this->msg; ?></th> <td><input type="submit" value="Sign Up" name="signup" id="signup" /></td> <td></td> </tr>
+        </table>
+    </form>
+</div>
+        

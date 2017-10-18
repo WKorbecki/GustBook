@@ -1,0 +1,29 @@
+<?= $this->bald; ?>
+<form method="post">
+    <table style="margin-left: auto; margin-right: auto">
+        <tr>
+            <th style="float: right">
+                Wiadomość:
+            </th>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <th style="float: right">
+                
+            </th>
+            <td>
+                <textarea name="message" id="message" rows="24" cols="75" style="resize: none"></textarea>
+            </td>
+        </tr>
+        <tr>
+            <th>
+                <?= $this->msg; ?>
+            </th>
+            <td>
+                <input type="submit" value="Wyślij" name="send" id="send" />
+            </td>
+        </tr>
+    </table>
+</form>

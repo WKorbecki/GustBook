@@ -1,0 +1,53 @@
+<?php echo $this->doctype() ?>
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>Księga gości</title>
+    </head>
+    <body>
+        <div id="page-start" style="width: 960px; margin-left: auto; margin-right: auto">
+            <div id="header">
+                <div id="header-logo" style="background-color: #eee">
+                    Miejsce na logo
+                </div>
+                <div id="header-navigation" style="background-color: #eee">
+                    [ <a href="<?php echo $this->url(array('controller'=>'index'),'default',true) ?>">Strona główna</a> ]
+                    [ Forum ]
+                    [ Kontakt ]
+                </div>
+            </div>
+            <hr />
+            <div id="body">
+                <div id="body-user-navigation" style="background-color: #eee">
+                    <?php
+                    if($this->user_id == 0)
+                        include 'no_user.phtml';
+                    else
+                        include 'user.phtml';
+                    ?>
+
+                </div>
+                <hr />
+                <?php if($this->user['access']){?>
+                <div id="body-admin-navigation" style="background-color: #eee">
+                    <?php include 'admin.phtml'; ?>
+                </div>
+                <hr />
+                <?php } ?>
+                <div id="body-content">
+                    <div id="body-content-left" style="float: left; width: 300; background-color: #eee">
+                        <?php include_once 'user_info.phtml'; ?>
+                    </div>
+                    <div id="body-content-rigth" style="float: left; width: 660; margin-left: auto; margin-right: auto; background-color: #eee">
+                        <?= $this->layout()->content; ?>
+                    </div>
+                    <div id="body-content-both" style="clear: both; background-color: #eee"></div>
+                </div>
+            </div>
+            <hr />
+            <div id="footer" style="text-align: center; background-color: #eee">
+                Właściciel: <a href="mailto:wojciechkorbecki@gmail.com">Wojciech Korbecki</a>
+            </div>
+        </div>
+    </body>
+</html>
